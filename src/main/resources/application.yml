@@ -4,10 +4,13 @@ author:
 
 ---
 
-logging:
-  file:/src/main/resources/mylog/log.log
-  level:
-    org:
-      springframework:
-        web:DEBUG
+#logging:
+#  file:/src/main/resources/mylog/log.log
+#  level:
+#    org:
+#      springframework:
+#        web:DEBUG
 
+spring:
+  profiles:
+    active: dev
