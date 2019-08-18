@@ -14,6 +14,31 @@ author:
 spring:
   profiles:
     active: dev
+  datasource:
+    initialization-mode: always
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboottest?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: root
+  jpa:
+    #②spring.jpa.show-sql用来设置hibernate操作的时候在控制台显示其真实的sql语句
+    show-sql: true
+    hibernate:
+      #①hibernate提供了根据实体类自动维护数据库表结构的功能，可通过spring.jpa.hibernate.ddl-auto来配置，有下列可选项：
+      #create：启动时删除上一次生成的表，并根据实体类生成表，表中数据会被清空。
+      #create-drop：启动时根据实体类生成表，sessionFactory关闭时表会被删除。
+      #update：启动时会根据实体类生成表，当实体类属性变动的时候，表结构也会更新，在初期开发阶段使用此选项。
+      #validate：启动时验证实体类和数据表是否一致，在我们数据结构稳定时采用此选项。
+      #none：不采取任何措施。
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+#  jackson:
+#    serialization:
+#      #让控制器输出的json字符串格式更美观
+#      indent_output:true
+
 
 #可以在控制台查看开启了那些自动配置
 debug: false
