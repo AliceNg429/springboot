@@ -16,8 +16,8 @@ spring:
     active: dev
   datasource:
     initialization-mode: always
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springboottest?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboottest?serverTimezone=UTC&createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username: root
     password: root
   jpa:
